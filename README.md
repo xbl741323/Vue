@@ -299,86 +299,8 @@ data: {
 
 ## Vue指令之`v-if`和`v-show`
 
-> 一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。
++ 一般来说，v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换 v-show 较好，如果在运行时条件不大可能改变 v-if 较好。
 
-### 根据条件筛选品牌
-
-1. 1.x 版本中的filterBy指令，在2.x中已经被废除：
-
-[filterBy - 指令](https://v1-cn.vuejs.org/api/#filterBy)
-
-```
-
-<tr v-for="item in list | filterBy searchName in 'name'">
-
-  <td>{{item.id}}</td>
-
-  <td>{{item.name}}</td>
-
-  <td>{{item.ctime}}</td>
-
-  <td>
-
-    <a href="#" @click.prevent="del(item.id)">删除</a>
-
-  </td>
-
-</tr>
-
-```
-
-2. 在2.x版本中[手动实现筛选的方式](https://cn.vuejs.org/v2/guide/list.html#显示过滤-排序结果)：
-
-+ 筛选框绑定到 VM 实例中的 `searchName` 属性：
-
-```
-
-<hr> 输入筛选名称：
-
-<input type="text" v-model="searchName">
-
-```
-
-+ 在使用 `v-for` 指令循环每一行数据的时候，不再直接 `item in list`，而是 `in` 一个 过滤的methods 方法，同时，把过滤条件`searchName`传递进去：
-
-```
-<tbody>
-
-      <tr v-for="item in search(searchName)">
-
-        <td>{{item.id}}</td>
-
-        <td>{{item.name}}</td>
-
-        <td>{{item.ctime}}</td>
-
-        <td>
-
-          <a href="#" @click.prevent="del(item.id)">删除</a>
-
-        </td>
-
-      </tr>
-
-    </tbody>
-
-```
-
-+ `search` 过滤方法中，使用 数组的 `filter` 方法进行过滤：
-
-```
-
-search(name) {
-
-  return this.list.filter(x => {
-
-    return x.name.indexOf(name) != -1;
-
-  });
-
-}
-
-```
 
 ## Vue调试工具`vue-devtools`的安装步骤和使用
 
