@@ -31,12 +31,6 @@
  + MVVM是前端视图层的概念，主要关注于 视图层分离，也就是说：MVVM把前端的视图层，分为了 三部分 Model, View , VM ViewModel
  + 为什么有了MVC还要有MVVM
 
-## Vue.js 基本代码 和 MVVM 之间的对应关系
-
-## Vue之 - `基本的代码结构`和`插值表达式`、`v-cloak`
-
-## Vue指令之`v-text`和`v-html`
-
 ## Vue指令之`v-bind`的三种用法
 
 1. 直接使用指令`v-bind`
